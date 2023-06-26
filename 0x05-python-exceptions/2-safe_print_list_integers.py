@@ -5,11 +5,10 @@ def safe_print_list_integers(my_list=[], x=0):
         for i in range(x):
             if isinstance(my_list[i], int):
                 print("{:d}".format(my_list[i]), end=" ")
-                
                 element_count += 1
-           
+
     except IndexError:
-        pass 
-    
+        pass
+
     print("\n", end="")
-    return  element_count
+    return element_count
