@@ -11,5 +11,5 @@ def safe_print_list(my_list=[], x=0):
     except IndexError:
         pass
 
-    print()
+    print("\n", end="")
     return element_count
