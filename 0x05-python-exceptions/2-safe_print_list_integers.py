@@ -9,7 +9,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 print("{:d}".format(my_list[i]), end=" ")
                 element_count += 1
 
-        if x > len(my_list):
+        if x > element_count:
             raise IndexError("x exceeds the length of my_list")
 
     except IndexError as e:
