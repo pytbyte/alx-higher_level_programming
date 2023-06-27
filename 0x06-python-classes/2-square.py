@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module that writes  constructs 
+module that writes  constructs
 a class Square with size validation
 """
 
@@ -11,7 +11,7 @@ class Square:
     a class Square with size validation
 
     Attributes:
-        size (int): size field of type int in the Square class. 
+        size (int): size field of type int in the Square class.
     """
     def __init__(self, size=0):
         """
@@ -19,9 +19,9 @@ class Square:
         to the suplied int from arguments
 
         This size attribute is a Private instance of the class
-        Square and should always be greater than 0. 
+        Square and should always be greater than 0.
 
-        
+
         Args:
             size (int): the requires parameter.
         """
