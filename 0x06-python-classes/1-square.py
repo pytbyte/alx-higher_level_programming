@@ -17,4 +17,5 @@ class Square:
         Instantiation with size
         (no type/value verification)
         """
+        self.__size = size
         pass
