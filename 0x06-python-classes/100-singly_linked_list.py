@@ -39,7 +39,7 @@ class Node:
         """
         Access the Node data private instance attribute.
         """
-        return self.__data
+        return (self.__data)
 
     @data.setter
     def data(self, value):
@@ -50,7 +50,7 @@ class Node:
         value - must be of type int.
         """
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("data must be an integer")
         self.__data = value
 
     @property
@@ -111,11 +111,11 @@ class SinglyLinkedList:
             new_node.next_node = self.__head
             self.__head = new_node
         else:
-            tmp = self.__head
-            while tmp.next_node is not None and tmp.next_node.data < value:
-                tmp = tmp.next_node
-            new_node.next_node = tmp.next_node
-            tmp.next_node = new_node
+            tmp_header = self.__head
+            while tmp_header.next_node is not None and tmp_header.next_node.data < value:
+                tmp_header = tmp_header.next_node
+            new_node.next_node = tmp_header.next_node
+            tmp_header.next_node = new_node
 
     def __str__(self):
         """
