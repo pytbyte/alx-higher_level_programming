@@ -112,10 +112,10 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             tmp_header = self.__head
-            while tmp_header.next_node is not None and tmp_header.next_node.data < value:
-                tmp_header = tmp_header.next_node
-            new_node.next_node = tmp_header.next_node
-            tmp_header.next_node = new_node
+            while t_hr.next_node is not None and t_hr.next_node.data < value:
+                t_hr = t_hr.next_node
+            new_node.next_node = t_hr.next_node
+            t_hr.next_node = new_node
 
     def __str__(self):
         """
