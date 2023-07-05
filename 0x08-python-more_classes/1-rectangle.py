@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-# -----------------------------------------------------------
-# (C) 2022 Igbinijesu Samuel, Lagos, Nigeria
-# email igbinijesusamuel@gmail.com
-# -----------------------------------------------------------
+
 """Rectangle Class.
+creates an empty class that defines a rectangle.
 
-This module contains an empty class that defines a rectangle.
-
-Usage Example:
+Usage sample:
 
     Rectangle = __import__('0-rectangle').Rectangle
 
@@ -18,30 +14,29 @@ Usage Example:
 
 
 class Rectangle:
-    """Defines the blueprint of a rectangle.
+    """Defines the structure of a rectangle.
 
-    Attribute:
-        width: An integer indicating the width of the rectangle object.
-        height: An integer indicating the height of the rectangle object.
+    Attributes:
+        width: width of the rectangle object as Integer.
+        height: height of the rectangle object as integer.
     """
 
     def __init__(self, width=0, height=0):
-        """An object constructor method.
+        """A method that creates the Object.
 
-        Initiatilizes Rectangle with width and height.
+        Initiatilizes object Rectangle with width and height.
 
         Args:
-            width: An integer representing object width.
-                  Has a default value of 0.
-            height: An integer representing object height.
-                  Has a default value of 0.
+            width: default value of 0.
+            height: default value of 0.
         """
-        self.__width = width
         self.__height = height
+        self.__width = width
 
     @property
     def width(self):
-        """Gets the width private attribute value.
+        """
+        Accesses the width private attribute value.
 
         Returns:
             The width private attribute
@@ -50,12 +45,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Sets the width private attribute value.
-
-        Validates the assignment of the width private attribute.
+        """
+        Sets the width private attribute value.
 
         Arg:
-            value: the value to be set
+            value: value to be set
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -65,7 +59,8 @@ class Rectangle:
 
     @property
     def height(self):
-        """Gets the height private attribute value.
+        """
+        Accesses the height private attribute value.
 
         Returns:
             The height private attribute
@@ -74,9 +69,8 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Sets the height private attribute value.
-
-        Validates the assignment of the height private attribute.
+        """
+        Sets the height private attribute value.
 
         Arg:
             value: the value to be set
