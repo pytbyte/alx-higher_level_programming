@@ -1,11 +1,21 @@
 #!/usr/bin/python3
-"""A locked class that only lets the user dynamically create the instance
-    attribute 'first_name'"""
+"""
+LockedClass with no class or object attribute,
+that prevents the user from dynamically creating
+new instance attributes, except if the new instance
+attribute is called first_name.
+"""
 
 
 class LockedClass:
-    """A locked class that only lets the user dynamically create the instance
-    attribute 'first_name'"""
+    """
+    LockedClass with no class or object attribute,
+    that prevents the user from dynamically creating
+    new instance attributes, except if the new instance
+    attribute is called first_name.
+
+    adds "first_name" to inbuilt __slots__ to be allowed
+    """
     __slots__ = ["first_name"]
 
     def __init__(self, first_name=""):
