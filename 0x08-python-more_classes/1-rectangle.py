@@ -15,6 +15,9 @@ Usage sample:
 
 class Rectangle:
     """Defines the structure of a rectangle.
+    Args:
+        width: width of the rectangle object as Integer.
+        height: height of the rectangle object as integer.
 
     Attributes:
         width: width of the rectangle object as Integer.
@@ -35,8 +38,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """
-        Accesses the width private attribute value.
+        """Accesses the width private attribute value.
 
         Returns:
             The width private attribute
