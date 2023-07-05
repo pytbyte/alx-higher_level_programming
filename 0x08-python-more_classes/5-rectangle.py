@@ -49,7 +49,7 @@ class Rectangle:
         should fill the rectangle area with the character #
         returns the rectangle area
         """
-        if self.__width == 0 or self.__height == 0:
+        if self.__height == 0 or self.__width == 0:
             return ""
         priety_rectangle = ""
         for x in range(self.__height):
