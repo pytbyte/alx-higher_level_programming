@@ -2,7 +2,7 @@
 
 """Rectangle Class.
 
-Empty class that defines a rectangle.
+empty class that defines a rectangle.
 
 Usage Sample:
 
@@ -19,15 +19,15 @@ class Rectangle:
     structure of a rectangle.
 
     Attribute:
-        width: must be type int.
-        height:  must be type int.
+        width: width of the rectangle object must be type int.
+        height: height of the rectangle object must be type int.
     """
 
     def __init__(self, width=0, height=0):
         """
         A method that creates the object rectangle.
 
-        creates an instance of the Rectangle object
+        creates an instance of the Rectangle object 
         with width and height.
 
         Args:
@@ -42,19 +42,19 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        self.__width = width
         self.__height = height
+        self.__width = width
 
     def __str__(self):
         """
-        should fill the rectangle area with the character #
+        should fill the rectangle area with the character # 
         returns the rectangle area
         """
-        if self.__width == 0 or self.__height == 0:
+        if self.__height == 0 or self.__width == 0:
             return ""
         priety_rectangle = ""
-        for x in range(self.__width):
-            for y in range(self.__height):
+        for y in range(self.__height):
+            for x in range(self.__width):
                 priety_rectangle += "#"
             priety_rectangle += "\n"
         return priety_rectangle[:-1]
@@ -122,7 +122,6 @@ class Rectangle:
         Return:
             rectangle perimeter
         """
-        
         if self.width == 0 or self.height == 0:
             return 0
         else:
