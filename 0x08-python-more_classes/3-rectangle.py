@@ -113,6 +113,14 @@ class Rectangle:
         Returns:
             rectangle area
         """
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         return self.__width * self.__height
 
     def perimeter(self):
@@ -122,6 +130,14 @@ class Rectangle:
         Return:
             rectangle perimeter
         """
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         if self.width == 0 or self.height == 0:
             return 0
         else:
