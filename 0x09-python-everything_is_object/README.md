@@ -1,6 +1,6 @@
 # 0x09. Python - Everything is object
 
-## learning objectives to know and understand:
+## learning objective is to know and understand:
 
 * Why Python programming is awesome
 * What is an object
