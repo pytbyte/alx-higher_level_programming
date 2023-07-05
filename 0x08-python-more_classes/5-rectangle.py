@@ -15,6 +15,7 @@ Usage Sample:
 
 
 class Rectangle:
+    
     """
     structure of a rectangle.
 
@@ -52,8 +53,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
         priety_rectangle = ""
-        for x in range(self.__height):
-            for y in range(self.__width):
+        for x in range(self.__width):
+            for y in range(self.__height):
                 priety_rectangle += "#"
             priety_rectangle += "\n"
         return priety_rectangle[:-1]
@@ -63,7 +64,7 @@ class Rectangle:
         return a string representation of the rectangle
         to use in  recreating a new instance by using eval()
         """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return " Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del___(self):
         """
