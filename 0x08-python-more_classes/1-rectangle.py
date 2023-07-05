@@ -21,7 +21,7 @@ class Rectangle:
         height: height of the rectangle object as integer.
     """
 
-    def __init__(self, width=0, height=0):
+    def __init__(self, height=0, width=0):
         """A method that creates the Object.
 
         Initiatilizes object Rectangle with width and height.
