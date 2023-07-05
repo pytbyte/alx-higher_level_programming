@@ -27,7 +27,7 @@ class Rectangle:
         """
         A method that creates the object rectangle.
 
-        creates an instance of the Rectangle object 
+        creates an instance of the Rectangle object
         with width and height.
 
         Args:
@@ -47,7 +47,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        should fill the rectangle area with the character # 
+        should fill the rectangle area with the character #
         returns the rectangle area
         """
         if self.__height == 0 or self.__width == 0:
