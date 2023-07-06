@@ -43,38 +43,6 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
-    def __str__(self):
-        """
-        should fill the rectangle area with the character #
-        returns the rectangle area
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        priety_rectangle = ""
-        for x in range(self.__height):
-            for y in range(self.__width):
-                priety_rectangle += self.print_symbol
-            priety_rectangle += "\n"
-        return priety_rectangle[:-1]
-
-    def __repr__(self):
-        """
-        return a string representation of the rectangle
-        to use in  recreating a new instance by using eval()
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    def __del___(self):
-        """
-        module delete self
-
-        deletes instance
-        prints a message as return value
-        decreases instance count per instance kill
-        """
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
-
     @property
     def width(self):
         """
@@ -177,3 +145,35 @@ class Rectangle:
             The new Rectangle instance
         """
         return cls(size, size)
+
+    def __str__(self):
+        """
+        should fill the rectangle area with the character #
+        returns the rectangle area
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        priety_rectangle = ""
+        for x in range(self.__height):
+            for y in range(self.__width):
+                priety_rectangle += self.print_symbol
+            priety_rectangle += "\n"
+        return priety_rectangle[:-1]
+
+    def __repr__(self):
+        """
+        return a string representation of the rectangle
+        to use in  recreating a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del___(self):
+        """
+        module delete self
+
+        deletes instance
+        prints a message as return value
+        decreases instance count per instance kill
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
