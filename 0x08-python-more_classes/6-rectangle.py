@@ -63,24 +63,6 @@ class Rectangle:
             priety_rectangle += "\n"
         return priety_rectangle[:-1]
 
-    def __repr__(self):
-        """
-        return a string representation of the rectangle
-        to use in  recreating a new instance by using eval()
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    def __del___(self):
-        """
-        module delete self
-
-        deletes instance
-        prints a message as return value
-        decreases instance count per instance kill
-        """
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
-
     @property
     def width(self):
         """
@@ -150,3 +132,20 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+    def __repr__(self):
+        """
+        return a string representation of the rectangle
+        to use in  recreating a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """
+        module delete self
+
+        deletes instance
+        prints a message as return value
+        decreases instance count per instance kill
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
