@@ -133,7 +133,7 @@ class Rectangle:
             return rect_1
         if rect_1.area() < rect_2.area():
             return rect_2
-    
+
     def __str__(self):
         """
         should fill the rectangle area with the character #
@@ -165,4 +165,3 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
