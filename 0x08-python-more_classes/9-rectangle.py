@@ -156,7 +156,7 @@ class Rectangle:
         priety_rectangle = ""
         for x in range(self.__height):
             for y in range(self.__width):
-                priety_rectangle += self.print_symbol
+                priety_rectangle += str(self.print_symbol)
             priety_rectangle += "\n"
         return priety_rectangle[:-1]
 
