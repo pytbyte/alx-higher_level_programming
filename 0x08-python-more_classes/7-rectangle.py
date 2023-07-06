@@ -43,37 +43,6 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
-    def __str__(self):
-        """
-        should fill the rectangle area with the character #
-        returns the rectangle area
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        priety_rectangle = ""
-        for x in range(self.__height):
-            for y in range(self.__width):
-                priety_rectangle += self.print_symbol
-            priety_rectangle += "\n"
-        return priety_rectangle[:-1]
-
-    def __repr__(self):
-        """
-        return a string representation of the rectangle
-        to use in  recreating a new instance by using eval()
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    def __del___(self):
-        """
-        module delete self
-
-        deletes instance
-        prints a message as return value
-        decreases instance count per instance kill
-        """
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
 
     @property
     def width(self):
@@ -131,7 +100,7 @@ class Rectangle:
         Returns:
             rectangle area
         """
-        return self.__width * self.__height
+        return self.__height * self.__width
 
     def perimeter(self):
         """
@@ -143,4 +112,36 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         else:
-            return 2 * (self.__width + self.__height)
+            return 2 * (self.__height + self.__width)
+
+    def __str__(self):
+        """
+        should fill the rectangle area with the character #
+        returns the rectangle area
+        """
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        priety_rectangle = ""
+        for x in range(self.__height):
+            for y in range(self.__width):
+                priety_rectangle += str(self.print_symbol)
+            priety_rectangle += "\n"
+        return priety_rectangle[:-1]
+
+    def __repr__(self):
+        """
+        return a string representation of the rectangle
+        to use in  recreating a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """
+        module delete self
+
+        deletes instance
+        prints a message as return value
+        decreases instance count per instance kill
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
