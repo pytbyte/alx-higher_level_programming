@@ -1,24 +1,28 @@
 #!/usr/bin/python3
-"""
-Rectangle Module
+"""Rectangle Class.
+
+Empty class that defines a rectangle.
+
+Usage Sample:
+
+    Rectangle = __import__('0-rectangle').Rectangle
+
+    my_rectangle = Rectangle()
+    print(type(my_rectangle))
+    print(my_rectangle.__dict__)
 """
 
 
 class Rectangle:
     """
-    Write an empty class Rectangle that defines a rectangle:
+        A method that creates the object rectangle.
 
-    Args:
-        width (int): int
-        height (int): int
+        creates an instance of the Rectangle object
+        with width and height.
 
-    Attributes:
-        width (int): int
-        height (int): int
-
-    Raises:
-        TypeError: not an integer
-        ValueError: less than 0
+        Args:
+            width: default value of 0.
+            height: default value of 0.
     """
 
     def __init__(self, width=0, height=0):
@@ -96,8 +100,10 @@ class Rectangle:
         return (self.__width + self.height) * 2
 
     def __str__(self):
-        """str:rectangle"""
-
+        """
+        should fill the rectangle area with the character #
+        returns the rectangle area
+        """
         rectangle = ""
         if self.__width == 0 or self.__height == 0:
             return rectangle
@@ -108,11 +114,14 @@ class Rectangle:
         return rectangle
 
     def __repr__(self):
-        """str: Function call"""
+        """
+        return a string representation of the rectangle
+        to use in  recreating a new instance by using eval()
+        """
 
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """just prints"""
+        """prints after xecution"""
 
         print("Bye rectangle...")
