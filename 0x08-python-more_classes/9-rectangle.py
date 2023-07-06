@@ -167,7 +167,7 @@ class Rectangle:
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
-    def __del___(self):
+    def __del__(self):
         """
         module delete self
 
