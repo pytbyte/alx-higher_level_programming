@@ -2,6 +2,8 @@
 """
 module cith class square
 """
+
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -22,10 +24,9 @@ class Square(Rectangle):
         area inherited from area.
         """
         return super().area()
-    
+
     def __str__(self):
         """
         priety representation of the square
         """
         return "[Square] {:d}/{:d}".format(self.__size, self.__size)
-    
