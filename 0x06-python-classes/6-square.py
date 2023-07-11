@@ -1,131 +1,77 @@
 #!/usr/bin/python3
-"""
-module that constructs
-a class Square with attribute position
-"""
+
+"""Define classes for a singly-linked list."""
 
 
-class Square:
-    """
-    module that constructs
-    a class Square with attribute position
+class Node:
+    """Represent a node in a singly-linked list."""
 
-    Attributes:
-        size (int): integer greater than 0.
-        position (tuple): Tuple with x and y
-    """
-    def __init__(self, size=0, position=(0, 0)):
-        """
-        position:
-        property def position(self):
-        to retrieve Private instance attribute: position
-
+    def __init__(self, data, next_node=None):
+        """Initialize a new Node.
         Args:
-            size (int): parameter value for size
-            position (tuple): Tuple with set of 2 ints
+            data (int): The data of the new Node.
+            next_node (Node): The next node of the new Node.
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
-        if (not isinstance(position, tuple) or len(position) != 2
-            or not isinstance(position[0], int) or
-            not isinstance(position[1], int) or position[0] < 0
-                or position[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
-        """
-        Private instance attribute: size
-        """
-    def area(self):
-        """
-        This Public instance method:
-        def area(self):
-        that returns the current square area.
-
-        Retrieves Private instance attribute: size
-
-        """
-        return self.__size * self.__size
+        self.data = data
+        self.next_node = next_node
 
     @property
-    def size(self):
-        """
-        property def size(self):
-        to retrieve Private instance attribute: size
+    def data(self):
+        """Get/set the data of the Node."""
+        return (self.__data)
 
-        """
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """
-        property setter def size(self, value):
-        to set Private instance attribute: size
-
-        args:
-
-        value
-
-        the int to set as new_size .
-        This updated the Private instance attribute: size
-        with new int.
-        """
+    @data.setter
+    def data(self, value):
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
-    def my_print(self):
-        """
-        Public instance method: def my_print(self):
-        prints in stdout the square with the character #:
-
-        if size is equal to 0, print an empty line
-        position should be use by using space
-        Don’t fill lines by spaces when position[1] > 0
-        """
-        if self.__size == 0:
-            print("")
-        else:
-            string_to_print = ""
-            for i in range(self.position[1]):
-                string_to_print += "\n"
-            for x in range(self.size):
-                for y in range(self.position[0]):
-                    string_to_print += " "
-                for z in range(self.size):
-                    string_to_print += "#"
-                string_to_print += "\n"
-            print("{}".format(string_to_print), end='')
+            raise TypeError("data must be an integer")
+        self.__data = value
 
     @property
-    def position(self):
+    def next_node(self):
+        """Get/set the next_node of the Node."""
+        return (self.__next_node)
+
+    @next_node.setter
+    def next_node(self, value):
+        if not isinstance(value, Node) and value is not None:
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = value
+
+
+class SinglyLinkedList:
+    """Represent a singly-linked list."""
+
+    def __init__(self):
+        """Initalize a new SinglyLinkedList."""
+        self.__head = None
+
+    def sorted_insert(self, value):
+        """Insert a new Node to the SinglyLinkedList.
+        The node is inserted into the list at the correct
+        ordered numerical position.
+        Args:
+            value (Node): The new Node to insert.
         """
-        property def position(self):
-        to retrieve Private instance attribute: position
+        new = Node(value)
+        if self.__head is None:
+            new.next_node = None
+            self.__head = new
+        elif self.__head.data > value:
+            new.next_node = self.__head
+            self.__head = new
+        else:
+            tmp = self.__head
+            while (tmp.next_node is not None and
+                    tmp.next_node.data < value):
+                tmp = tmp.next_node
+            new.next_node = tmp.next_node
+            tmp.next_node = new
 
-        """
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        """
-        property setter def property(self, value):
-        to set Private instance attribute: property
-
-        args:
-
-        value
-
-        must be a tuple of 2 positive integers, otherwise raise a TypeError
-        exception.
-
-        """
-        if (not isinstance(value, tuple) or len(value) != 2 or not
-            isinstance(value[0], int) or not isinstance(value[1], int)
-                or value[0] < 0 or value[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+    def __str__(self):
+        """Define the print() representation of a SinglyLinkedList."""
+        values = []
+        tmp = self.__head
+        while tmp is not None:
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return ('\n'.join(values))

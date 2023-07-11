@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-lookup = __import__('0-lookup').lookup
+inherits_from = __import__('4-inherits_from').inherits_from
 
-class MyClass1(object):
-    pass
-
-class MyClass2(object):
-    my_attr1 = 3
-    def my_meth(self):
-        pass
-
-print(lookup(MyClass1))
-print(lookup(MyClass2))
-print(lookup(int))
+a = True
+if inherits_from(a, int):
+    print("{} inherited from class {}".format(a, int.__name__))
+if inherits_from(a, bool):
+    print("{} inherited from class {}".format(a, bool.__name__))
+if inherits_from(a, object):
+    print("{} inherited from class {}".format(a, object.__name__))
