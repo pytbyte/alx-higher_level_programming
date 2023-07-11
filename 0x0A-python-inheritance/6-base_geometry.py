@@ -6,7 +6,8 @@ Creates a class.
 
 
 class BaseGeometry:
-    """Class with public instance method 
+    """
+    Class with public instance method
     that culculates area.
     """
 
