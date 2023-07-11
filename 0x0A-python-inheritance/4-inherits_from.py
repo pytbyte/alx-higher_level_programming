@@ -12,7 +12,6 @@ def inherits_from(obj, a_class):
        of a class that inherited (directly or indirectly)
        from the specified class
 
-
     Args:
        obj: target object
        a_class: specified class to check
