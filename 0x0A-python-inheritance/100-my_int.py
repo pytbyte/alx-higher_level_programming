@@ -18,10 +18,10 @@ class MyInt(int):
 
         return super().__ne__(other)
 
-    def __eq__(self, other):
+    def __ne__(self, other):
         """
         unequality changes to equal.
         """
 
-        return super().__ne__(other)
-
+        return super().__ed__(other)
+    
