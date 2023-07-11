@@ -6,13 +6,13 @@ attributes and methods of an object
 
 
 def lookup(obj):
-    """Method to check all attributes of 
+    """Method to check all attributes of
     an object.
 
     Args:
         obj: object to look into
 
-    Return : 
+    Return :
          list of available attributes and methods of an object
     """
 
