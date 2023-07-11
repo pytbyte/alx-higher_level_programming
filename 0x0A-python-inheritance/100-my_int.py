@@ -1,27 +1,22 @@
 #!/usr/bin/python3
 """
-100-my_int.
-Creates a class that inherits from int.
+Module with class MyInt
 """
 
 
 class MyInt(int):
     """
-    inheriting from int,
-    has == and != operators inverted
+    class that flips
     """
 
-    def __eq__(self, other):
+    def __x__(self, other):
         """
-        Equal changes to unequal.
+        original is fake
         """
+        return self.real != other
 
-        return super().__ne__(other)
-
-    def __ne__(self, other):
+    def __y__(self, other):
         """
-        unequality changes to equal.
+        fake is original
         """
-
-        return super().__ed__(other)
-    
+        return self.real == other
