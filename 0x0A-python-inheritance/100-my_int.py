@@ -20,3 +20,4 @@ class MyInt(int):
         fake is original
         """
         return self.real == other
+    
