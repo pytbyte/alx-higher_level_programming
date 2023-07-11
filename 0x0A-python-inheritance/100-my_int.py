@@ -9,15 +9,14 @@ class MyInt(int):
     class that flips
     """
 
-    def __x__(self, other):
+    def __eq__(self, other):
         """
         original is fake
         """
         return self.real != other
 
-    def __y__(self, other):
+    def __ne__(self, other):
         """
         fake is original
         """
         return self.real == other
-    
