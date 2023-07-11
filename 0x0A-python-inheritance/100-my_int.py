@@ -11,16 +11,17 @@ class MyInt(int):
     has == and != operators inverted
     """
 
-    def __equal__(self, other):
+    def __eq__(self, other):
         """
         Equal changes to unequal.
         """
 
-        return super().__unequal__(other)
+        return super().__ne__(other)
 
-    def __unequal__(self, other):
+    def __eq__(self, other):
         """
         unequality changes to equal.
         """
 
-        return super().__equal__(other)
+        return super().__ne__(other)
+
