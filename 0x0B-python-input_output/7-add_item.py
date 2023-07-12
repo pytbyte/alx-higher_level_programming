@@ -10,16 +10,16 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 def add_items():
     """
-    function docs
+    load and save
     """
-    filename = "add_item.json"
-    if path.isfile(filename):
-        final_list = load_from_json_file(filename)
+    target_file = "add_item.json"
+    if path.isfile(target_file):
+        json_data = load_from_json_file(target_file)
     else:
-        final_list = []
+        json_data = []
     for i in range(1, len(argv)):
-        final_list.append(argv[i])
-    save_to_json_file(final_list, filename)
+        json_data.append(argv[i])
+    save_to_json_file(json_data, target_file)
 
 
 add_items()
