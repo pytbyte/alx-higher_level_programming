@@ -1,6 +1,6 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """_Write_file_ : function that creates,
-                opens, writes and 
+                opens, writes and
                 prints character count
 """
 
@@ -9,9 +9,8 @@ def write_file(filename="", text=""):
     """_write_file_ : handles the create
                     open, write and char
                     counter.
-                    
-    Args:
-        filename (str): the name of the 
+        Args:
+        filename (str): the name of the
                         file you intend
                         to write to.
         text (str): the text to write
