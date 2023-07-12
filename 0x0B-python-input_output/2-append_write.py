@@ -17,5 +17,5 @@ def append_write(filename="", text=""):
                     into the file.
     """
 
-    with open(filename, 'a+') as target:
+    with open(filename, 'a') as target:
         return target.write(text)
