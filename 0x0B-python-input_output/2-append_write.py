@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""_append_file_ : function that creates,
+"""_append_write_ : function that creates,
                 opens, appends and
                 prints character count
 """
 
 
-def append_file(filename="", text=""):
-    """_append_file_ : handles the create
+def append_write(filename="", text=""):
+    """_append_write_ : handles the create
                     open, append and char
                     counter.
         Args:
@@ -17,5 +17,5 @@ def append_file(filename="", text=""):
                     into the file.
     """
 
-    with open(filename, 'a') as target:
+    with open(filename, 'a+') as target:
         return target.write(text)
