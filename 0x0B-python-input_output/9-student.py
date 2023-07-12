@@ -10,7 +10,7 @@ class Student:
         - first_name
         - last_name
         - age
-   
+
     """
 
     def __init__(self, first_name, last_name, age):
@@ -26,7 +26,7 @@ class Student:
         """
         Retrieves a dictionary representation
         of a Student instance.
-        Return: 
+        Return:
         the dict representation of the instance.
         """
 
