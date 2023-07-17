@@ -54,18 +54,18 @@ class Square(Rectangle):
         """
         if args and len(args) != 0:
             for count in range(len(args)):
-                if count ==0:
+                if count == 0:
                     if args[count] is None:
                         self.__init__(
                                 self.width, self.width, self.x, self.y)
                     else:
                         self.id = args[count]
-                if count ==1:
+                if count == 1:
                     self.width = args[count]
                     self.height = args[count]
-                if count ==2:
+                if count == 2:
                     self.x = args[count]
-                if count ==3:
+                if count == 3:
                     self.y = args[count]
         else:
             if kwargs and len(kwargs) != 0:
