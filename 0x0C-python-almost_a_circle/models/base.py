@@ -62,8 +62,9 @@ class Base:
 
         filename = "{}.json".format(cls.__name__)
         with open(filename, "w", encoding="utf-8") as ready_file:
-            ready_file.write(cls.to_json_string([c.to_dictionary() for c in list_objs]))
+            ready_file.write((cls.to_json_string([c.to_dictionary()
 
+                                                 for c in list_objs])))
 
     @staticmethod
     def from_json_string(json_string):
@@ -79,10 +80,9 @@ class Base:
             return []
         return json.loads(json_string)
 
-  
     @classmethod
     def load_from_file(cls):
-        """load_from_file 
+        """load_from_file
 
         Returns a list of instances.
         """
@@ -160,7 +160,7 @@ class Base:
         dummy_instance.y = 0
         dummy_instance.update(**dictionary)
         return dummy_instance
-        
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
@@ -182,12 +182,12 @@ class Base:
         _artwork.pensize(8)
 
         # Loop through both lists and draw the shapes
-        for _shape in (list_rectangles and  list_squares):
+        for _shape in (list_rectangles and list_squares):
             _artwork.penup()
             _artwork.setpos(0, 0)
             turtle.Screen().colormode(255)
             _artwork.pencolor((randrange(255), randrange(255), randrange(255)))
             # Call the helper method to draw the shape
-            Base.draw(_artwork, _shape)  
+            Base.draw(_artwork, _shape)
             time.sleep(1)
         time.sleep(5)
