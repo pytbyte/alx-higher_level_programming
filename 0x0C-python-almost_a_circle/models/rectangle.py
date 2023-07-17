@@ -142,13 +142,13 @@ class Rectangle(Base):
                                 self.width, self.height, self.x, self.y)
                     else:
                         self.id = args[count]
-                if count ==1:
+                if count == 1:
                     self.width = args[count]
-                if count ==2:
+                if count == 2:
                     self.height = args[count]
-                if count ==3:
+                if count == 3:
                     self.x = args[count]
-                if count ==4:
+                if count == 4:
                     self.y = args[count]
         else:
             if kwargs or len(kwargs) != 0:
