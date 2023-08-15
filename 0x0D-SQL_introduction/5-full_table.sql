@@ -1,7 +1,3 @@
--- script that prints a decription of first_table
-SELECT ALL
-FROM
-    information_schema.COLUMNS
-WHERE
-    TABLE_SCHEMA = 'hbtn_0c_0'
-    AND TABLE_NAME = 'first_table';
+-- print full description of the table first_table
+-- not allowed to use the decribe or explain statements
+SHOW CREATE TABLE first_table;
