@@ -1,10 +1,5 @@
 -- script that prints a decription of first_table
-SELECT
-    COLUMN_NAME,
-    COLUMN_TYPE,
-    IS_NULLABLE,
-    COLUMN_DEFAULT,
-    CHARACTER_MAXIMUM_LENGTH
+SELECT ALL
 FROM
     information_schema.COLUMNS
 WHERE
