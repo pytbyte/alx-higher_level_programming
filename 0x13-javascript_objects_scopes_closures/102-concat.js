@@ -1,16 +1,34 @@
 #!/usr/bin/node
 const fs = require('fs');
 
-// Njia za faili za chanzo na marudio
+if (process.argv.length !== 5) {
+  console.error('Tumia: ./script.js chanzo1.txt chanzo2.txt marudio.txt');
+  process.exit(1);
+}
+
 const sourceFilePath1 = process.argv[2];
 const sourceFilePath2 = process.argv[3];
 const destinationFilePath = process.argv[4];
 
-const data1 = fs.readFileSync(sourceFilePath1, 'utf8');
-const data2 = fs.readFileSync(sourceFilePath2, 'utf8');
+fs.readFile(sourceFilePath1, 'utf8', (err, data1) => {
+  if (err) {
+    console.error(`Kosa kusoma faili ya chanzo cha kwanza: ${err.message}`);
+    process.exit(1);
+  }
 
-const concatenatedData = data1 + data2;
+  fs.readFile(sourceFilePath2, 'utf8', (err, data2) => {
+    if (err) {
+      console.error(`Kosa kusoma faili ya chanzo cha pili: ${err.message}`);
+      process.exit(1);
+    }
 
-fs.writeFileSync(destinationFilePath, concatenatedData);
-
-console.log('Faili zimeunganishwa kwa mafanikio kwenye faili ya marudio.');
+    const concatenatedData = data1 + data2;
+    fs.writeFile(destinationFilePath, concatenatedData, (err) => {
+      if (err) {
+        console.error(`Kosa kuandika kwenye faili ya marudio: ${err.message}`);
+        process.exit(1);
+      }
+      console.log('Faili zimeunganishwa kwa mafanikio kwenye faili ya marudio.');
+    });
+  });
+});
