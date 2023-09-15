@@ -22,9 +22,8 @@ if __name__ == "__main__":
                                db=db, charset="utf8")
         cur = conn.cursor()
 
-        q = ("SELECT * FROM states WHERE name LIKE BINARY '{}';"
-             ).format(city)
-        cur.execute(q)
+        query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC;"
+        cur.execute(query, (city,))
 
         results = cur.fetchall()
 
