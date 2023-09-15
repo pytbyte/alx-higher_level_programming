@@ -33,8 +33,8 @@ if __name__ == "__main__":
 
         results = cur.fetchall()
 
-        cities = [row[0] for row in results]
-        print(", ".join(cities))
+        #cities = [row for row in results]
+        print(results)
 
     except MySQLdb.Error as e:
         print("MySQL Error:", e)
