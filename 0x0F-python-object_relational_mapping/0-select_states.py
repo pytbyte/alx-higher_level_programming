@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" 
+python database manipulation
+"""
 import MySQLdb
 import sys
 
