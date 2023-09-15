@@ -22,7 +22,7 @@ if __name__ == "__main__":
                                db=db, charset="utf8")
         cur = conn.cursor()
 
-        query = ("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;"
+        query = ("SELECT * FROM states WHERE name like '{}' ORDER BY id ASC;"
                  ).format(city)
         cur.execute(query)
 
