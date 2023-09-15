@@ -22,7 +22,7 @@ if __name__ == "__main__":
                                db=db, charset="utf8")
         cur = conn.cursor()
 
-        q = ("SELECT * FROM states WHERE name LIKE  '{}' ORDER BY id ASC;"
+        q = ("SELECT * FROM states WHERE name LIKE BINARY  '{}' ORDER BY id ASC;"
              ).format(c)
         cur.execute(q)
 
