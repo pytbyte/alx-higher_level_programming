@@ -22,19 +22,22 @@ if __name__ == "__main__":
                                db=db, charset="utf8")
         cur = conn.cursor()
 
-        query = """
-    SELECT DISTINCT cities.name
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name = %s
-    ORDER BY cities.id ASC
-    """
+        query = "SELECT DISTINCT cities.name FROM cities \
+                 JOIN states ON cities.state_id = states.id \
+                 WHERE states.name = %s \
+                 ORDER BY cities.id ASC"
+
+        # Execute the query with the state_name as a parameter
         cur.execute(query, (state,))
 
+        # Fetch all the results
         results = cur.fetchall()
 
-        #cities = [row for row in results]
-        print(results)
+        if results:
+            # Print the results
+            print(", ".join(city[0] for city in results))
+        else:
+            print("No cities found for the given state.")
 
     except MySQLdb.Error as e:
         print("MySQL Error:", e)
