@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""
-python database manipulation
+"""0-select_states
+python database manipulation program
+1.checks args and assigns them accordingly or print error messageand exit.
+2.initiates database connection from args values supplied
+3.runs db query and prints results or error message
+4.closes the database connection
 """
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database_name>")
+        print("./0-select_states.py <username> <password> <database_name>")
         sys.exit(1)
 
     username, password, database_name = sys.argv[1], sys.argv[2], sys.argv[3]
