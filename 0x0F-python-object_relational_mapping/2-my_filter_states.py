@@ -14,7 +14,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 5:
         print("./2.. <username> <password> <database_name> <city_name>")
         sys.exit(1)
-    user, pswd, db, city = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    user, pswd, db, c = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
     try:
         conn = MySQLdb.connect(host="localhost", port=3306,
@@ -22,8 +22,8 @@ if __name__ == "__main__":
                                db=db, charset="utf8")
         cur = conn.cursor()
 
-        q = ("SELECT * FROM states WHERE name LIKE BINARY '{}';"
-             ).format(city)
+        q = ("SELECT * FROM states WHERE name LIKE  '{}' ORDER BY id ASC;"
+             ).format(c)
         cur.execute(q)
 
         results = cur.fetchall()
