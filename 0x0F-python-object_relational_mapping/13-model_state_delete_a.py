@@ -22,7 +22,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("./8-modal.. <username><password> <database_name>")
+        print("./13-modal.. <username><password> <database_name>")
         sys.exit(1)
 
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
@@ -39,7 +39,7 @@ if __name__ == "__main__":
         for state in states_data:
             if "a" in state.name:
                 db.delete(state)
-                db.commit()
+            db.commit()
 
     except Exception as e:
         print("something went wrong: ", e)
