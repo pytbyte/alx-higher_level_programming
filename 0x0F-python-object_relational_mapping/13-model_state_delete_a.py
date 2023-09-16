@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""7-model_states
+"""13-model_state_delete_a
 python database manipulation program
 uses Sqlalchemy and some base model
 to delete all entries that
