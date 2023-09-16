@@ -39,7 +39,7 @@ if __name__ == "__main__":
         state_data = db.query(State).filter_by(name=city).first()
 
         if state_data:
-            print("{}: {}".format(state_data.id, state_data.name))
+            print("{}".format(state_data.name))
         else:
             print("Not found")
 
