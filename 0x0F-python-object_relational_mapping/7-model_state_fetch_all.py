@@ -16,7 +16,7 @@ from sqlalchemy.orm import sessionmaker
 3. create session
 4. Query data
 5. print formated data or throw error message on failiure
-6. close session 
+6. close session
 """
 
 if __name__ == "__main__":
