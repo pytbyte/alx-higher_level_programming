@@ -10,7 +10,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base as StateBase, State
-from relationship_city import Base as CityBase, City
+from relationship_city import City
 
 """
 Create the database engine
@@ -25,13 +25,11 @@ if __name__ == "__main__":
         print("Usage: python3 script.py <username> <password> <database>")
     else:
         user, pwd, db = sys.argv[1], sys.argv[2], sys.argv[3]
-        engine = create_engine('mysql+mysqldb://{} : {}@localhost:3306/{}'
+        engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                                .format(user, pwd, db),
                                pool_pre_ping=True)
 
         StateBase.metadata.create_all(engine)
-        CityBase.metadata.create_all(engine)
-
         Session = sessionmaker(bind=engine)
         db_session = Session()
 
