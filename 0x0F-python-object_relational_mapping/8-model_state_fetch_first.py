@@ -39,7 +39,7 @@ if __name__ == "__main__":
         if state_data:
             print("{}: {}".format(state_data.id, state_data.name))
         else:
-            print("Table is Empty.")
+            print("Nothing")
 
     except Exception as e:
         print("something went wrong: ", e)
