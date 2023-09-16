@@ -1,48 +1,41 @@
 #!/usr/bin/python3
-"""Lists all city names in a specified state from the database."""
-
+"""2-my_filter_states
+python database manipulation program
+1.checks args and assigns them accordingly or print error message and exit.
+2.initiates database connection from args values supplied
+3.runs db query and prints results
+filtered by submited state arg  or error message
+4.closes the database connection
+"""
 import MySQLdb
 import sys
 
-
-def list_city_names_in_state(username, password, database, state_name):
-    # Establish a connection to the MySQL database
-    db = MySQLdb.connect(
-        host="localhost",
-        user=username,
-        passwd=password,
-        db=database,
-        port=3306
-    )
-
-    # Create a cursor object for executing SQL queries
-    cursor = db.cursor()
-
-    # Execute the SQL query to fetch city names in the specified state
-    query = """
-        SELECT cities.name
-        FROM cities
-        INNER JOIN states ON states.id = cities.state_id
-        WHERE states.name = %s
-    """
-    cursor.execute(query, (state_name,))
-
-    # Fetch and print all city names
-    rows = cursor.fetchall()
-    city_names = [row[0] for row in rows]
-    print(", ".join(city_names))
-
-    # Close the cursor and database connection
-    cursor.close()
-    db.close()
-
-
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: python3 script.py <user> <password> <database> <state>")
-    else:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        state_name = sys.argv[4]
-        list_city_names_in_state(username, password, database, state_name)
+        print("./5.. <username> <password> <database_name> <state>")
+        sys.exit(1)
+    user, pswd, db, state = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+
+    try:
+        conn = MySQLdb.connect(host="localhost", port=3306,
+                               user=user, passwd=pswd,
+                               db=db, charset="utf8")
+        cur = conn.cursor()
+        query = """
+        SELECT DISTINCT cities.name
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        """
+        cur.execute(query, (state,))
+
+        results = cur.fetchall()
+
+        cities = [row[0] for row in results]
+        print(", ".join(cities))
+
+    except MySQLdb.Error as e:
+        print("MySQL Error:", e)
+    finally:
+        cur.close()
+        conn.close()
