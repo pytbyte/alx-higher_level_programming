@@ -15,7 +15,7 @@ from sqlalchemy.orm import sessionmaker
 1. handle argv for db connections and error reporting
 2. try create engine and connect
 3. create session
-4. Query data and filter_by column enty with "a".
+4. Query data and filter_by column entry with "a" in name.
 5. print formated data or throw error message on failiure
 6. close session
 """
