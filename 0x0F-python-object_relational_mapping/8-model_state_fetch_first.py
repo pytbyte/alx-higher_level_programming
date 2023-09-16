@@ -34,12 +34,15 @@ if __name__ == "__main__":
         Session = sessionmaker(bind=engine)
         db = Session()
 
-        state_data = db.query(State).order_by(State.id).first()
+        state_data = db.query(State).first()
 
         if state_data:
             print("{}: {}".format(state_data.id, state_data.name))
+        else:
+            print("Table is Empty.")
 
     except Exception as e:
         print("something went wrong: ", e)
+
     finally:
         db.close()
