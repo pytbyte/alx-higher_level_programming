@@ -40,6 +40,7 @@ if __name__ == "__main__":
             new_state = State(name="California", cities=[new_city])
 
             db_session.add(new_state)
+            db_session.add(new_city)
             db_session.commit()
             print("State 'California' with City'San Francisco' created .")
 
