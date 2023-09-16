@@ -35,10 +35,10 @@ if __name__ == "__main__":
         Session = sessionmaker(bind=engine)
         db = Session()
 
-        states_data = db.query(State).all()
+        states_data = (db.query(State)
+                       .filter(State.name.like('%a%')).all())
         for state in states_data:
-            if "a" in state.name:
-                db.delete(state)
+            db.delete(state)
         db.commit()
 
     except Exception as e:
