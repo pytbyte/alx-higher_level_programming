@@ -9,7 +9,7 @@ Usage: python3 script.py <username> <password> <database>
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from relationship_state import Base as StateBase, State
+from relationship_state import Base, State
 from relationship_city import City
 
 """
@@ -29,7 +29,7 @@ if __name__ == "__main__":
                                .format(user, pwd, db),
                                pool_pre_ping=True)
 
-        StateBase.metadata.create_all(engine)
+        Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         db_session = Session()
 
