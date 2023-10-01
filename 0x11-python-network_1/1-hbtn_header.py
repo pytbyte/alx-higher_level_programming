@@ -12,7 +12,7 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: ./script.py <url>")
+        print("Usage: ./1-hbtn_header.py <url>")
         sys.exit(1)
 
     url = sys.argv[1]
