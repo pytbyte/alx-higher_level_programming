@@ -21,8 +21,6 @@ if __name__ == "__main__":
             x_request_id = res.getheader('X-Request-Id')
             if x_request_id:
                 print(x_request_id)
-            else:
-                print("X-Request-Id not found in the response headers.")
 
     except Exception as e:
         print("Error :", e)
