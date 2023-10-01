@@ -2,12 +2,11 @@
 
 """_0-hbtn_status _
    A script to fetch https://alx-intranet.hbtn.io/status
-   uses urllib package
+   uses requests package
    displays eg :
        Body response:$
-        - type: <class 'bytes'>$
+        - type: <class 'str'>$
         - content: b'OK'$
-        - utf8 content: OK$
 """
 
 import requests
