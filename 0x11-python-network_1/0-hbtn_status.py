@@ -7,8 +7,7 @@
        Body response:$
         - type: <class 'bytes'>$
         - content: b'OK'$
-        - utf8 content: OK$
-         
+        - utf8 content: OK$       
 """
 
 import urllib.request
