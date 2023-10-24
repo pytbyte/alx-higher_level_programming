@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-function fetchFilmDataAndPrintCharacters (movieId) {
+function fetchFilmCharacters (movieId) {
   const filmUrl = `https://swapi-api.hbtn.io/api/films/${movieId}`;
 
   request(filmUrl, (error, response, filmBody) => {
@@ -31,4 +31,4 @@ if (process.argv.length !== 3) {
 }
 
 const movieId = process.argv[2];
-fetchFilmDataAndPrintCharacters(movieId);
+fetchFilmCharacters(movieId);
