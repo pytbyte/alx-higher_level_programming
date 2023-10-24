@@ -2,7 +2,7 @@
 const fs = require('fs');
 const request = require('request');
 
-function downloadFile (url, filePath) {
+function downloadFile(url, filePath) {
   const fileStream = fs.createWriteStream(filePath);
 
   request(url)
