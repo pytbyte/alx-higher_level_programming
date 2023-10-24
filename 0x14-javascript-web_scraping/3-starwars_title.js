@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-function fetchMovieTitle(movieId) {
+function fetchMovieTitle (movieId) {
   const APIurl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
   request(APIurl, (error, response, body) => {
