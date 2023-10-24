@@ -1,7 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
 
-
 if (process.argv.length !== 3) {
   console.error('Usage: ./3-starwars_title.js <id>');
   process.exit(1);
